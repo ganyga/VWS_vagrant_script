@@ -4,13 +4,12 @@ Vagrant.configure("2") do |config|
   config.vm.box = "rockylinux/8"
   config.vm.box_check_update = true
 
-  # Create cent1
+  # Create cent1 VM
   config.vm.define "cent1" do |cent1|
     cent1.vm.hostname = "cent1"
-    cent1.vm.network "private_network", ip: "172.18.1.91"
+    cent1.vm.network "private_network", ip: "172.16.133.91"
     cent1.vm.network "private_network", ip: "10.18.1.91"
-    cent1.vm.provider "virtualbox" do |v|
-      v.name = "cent1"
+    cent1.vm.provider "vmware_desktop" do |v|
       v.memory = 1024
       v.cpus = 2
       v.linked_clone = true
@@ -28,13 +27,12 @@ Vagrant.configure("2") do |config|
     cent1.vm.provision "shell", path: "SHELL/init.sh"
   end
 
-  # Create cent2
+  # Create cent2 VM
   config.vm.define "cent2" do |cent2|
     cent2.vm.hostname = "cent2"
-    cent2.vm.network "private_network", ip: "172.18.1.92"
+    cent2.vm.network "private_network", ip: "172.16.133.92"
     cent2.vm.network "private_network", ip: "10.18.1.92"
-    cent2.vm.provider "virtualbox" do |v|
-      v.name = "cent2"
+    cent2.vm.provider "vmware_desktop" do |v|
       v.memory = 1024
       v.cpus = 2
       v.linked_clone = true
@@ -64,13 +62,12 @@ EOF
     cent2.vm.provision "shell", path: "SHELL/init.sh"
   end
 
-  # Create cent3
+  # Create cent3 VM
   config.vm.define "cent3" do |cent3|
     cent3.vm.hostname = "cent3"
-    cent3.vm.network "private_network", ip: "172.18.1.93"
+    cent3.vm.network "private_network", ip: "172.16.133.93"
     cent3.vm.network "private_network", ip: "10.18.1.93"
-    cent3.vm.provider "virtualbox" do |v|
-      v.name = "cent3"
+    cent3.vm.provider "vmware_desktop" do |v|
       v.memory = 1024
       v.cpus = 2
       v.linked_clone = true
