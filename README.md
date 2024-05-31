@@ -12,8 +12,8 @@
     MEM : 1G
     Disk : 20G
     Middleware : nginx
-    DMZ : 172.18.1.91
-    Local : 10.18.1.91
+    DMZ : 172.16.133.91
+    Local : 10.16.133.91
    ```
   - cent2 (데이터베이스)
   ```script
@@ -22,8 +22,8 @@
     MEM : 1G
     Disk : 20G
     Middleware : mariadb
-    DMZ : 172.18.1.92
-    Local : 10.18.1.92
+    DMZ : 172.16.133.92
+    Local : 10.16.133.92
    ```
   - cent3 (스토리지)
   ```script
@@ -32,8 +32,8 @@
     MEM : 1G
     Disk : 20G
     Middleware : nfs
-    DMZ : 172.18.1.93
-    Local : 10.18.1.93
+    DMZ : 172.16.133.93
+    Local : 10.16.133.93
    ```
 
 ---
@@ -110,7 +110,7 @@ sudo ps -ef | grep (nginx|mysql|nfs)
 
 ---
 ## 웹 페이지 접속
- - URL : http://172.18.1.91/www/index.html
+ - URL : http://172.16.133.91/www/index.html
  - hosts를 수정한 경우 지정한 도메인으로 접속 가능
    - 웹서버 가상호스트 설정 : vws.tmpcompany.com
 

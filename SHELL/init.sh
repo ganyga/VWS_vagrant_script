@@ -11,13 +11,13 @@ NFS="/etc/exports"
 
 echo "hosts에 각 서버를 등록합니다."
 {
-	echo "172.18.1.91 cent1" 
-	echo "172.18.1.92 cent2" 
-	echo "172.18.1.93 cent3" 
+	echo "172.16.133.91 cent1" 
+	echo "172.16.133.92 cent2" 
+	echo "172.16.133.93 cent3" 
 }>> /etc/hosts
 
 echo "fstab에 nfs정보를 등록합니다."
-echo "172.18.1.93:/nfs     /mnt    nfs     noauto   1 1" >> /etc/fstab
+echo "172.16.133.93:/nfs     /mnt    nfs     noauto   1 1" >> /etc/fstab
 
 echo "root유저의 환경설정을 합니다."
 {
